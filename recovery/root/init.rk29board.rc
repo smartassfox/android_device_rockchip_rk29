@@ -1,0 +1,5 @@
+import init.rk29board.usb.rc		
+
+service battery_charger /charger
+    class charger
+

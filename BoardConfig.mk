@@ -1,0 +1,61 @@
+USE_CAMERA_STUB := true
+
+# inherit from the proprietary version
+-include vendor/rockchip/rk29/BoardConfigVendor.mk
+
+#BOARD_USES_GENERIC_AUDIO := true
+
+TARGET_BOARD_PLATFORM := rk29sdk
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME := rk29board
+
+TARGET_PROVIDES_INIT_RC := true
+
+#TARGET_NO_KERNEL := true
+
+#BOARD_KERNEL_CMDLINE := 
+#BOARD_KERNEL_BASE := 0x60400000
+#BOARD_KERNEL_PAGESIZE := 00004000
+
+# fix this up by examining /proc/mtd on a running device
+#BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
+#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000
+#BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x1cc00000
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 0xa1400000
+#BOARD_FLASH_BLOCK_SIZE := 131072
+
+TARGET_PREBUILT_KERNEL := device/rockchip/rk29/kernel
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+# Use this flag if the board has a ext4 partition larger than 2gb
+#BOARD_HAS_LARGE_FILESYSTEM := true
+
+TARGET_NO_RADIOIMAGE := true
+
+WPA_SUPPLICANT_VERSION := VER_0_6_X
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_ARG      := ""
+WIFI_DRIVER_MODULE_NAME     := "wlan"
+
+BOARD_EGL_CFG := device/rockchip/rk29/egl.cfg
+BOARD_NO_RGBX_8888 := true
+
+USE_OPENGL_RENDERER := true
+
+TARGET_RECOVERY_INITRC := device/rockchip/rk29/recovery_init.rc
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/rockchip/rk29/recovery_keys.c
+BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+BOARD_UMS_LUN1FILE := "/sys/class/android_usb/android0/f_mass_storage/lun1/file"
+
+TARGET_USERIMAGES_USE_EXT4 := false
+BOARD_BOOTIMAGE_PARTITION_SIZE      := 0x01000000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE  := 0x01000000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE    := 0x10000000
+BOARD_USERDATAIMAGE_PARTITION_SIZE  := 0xa1400000
+BOARD_FLASH_BLOCK_SIZE              := 0x00004000
